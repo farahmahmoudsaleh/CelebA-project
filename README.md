@@ -40,8 +40,8 @@ celebA_cnn_project/
 You can run the full project in a Docker container:
 
 ```bash
-docker pull farahmsaleh/celeba:latest
+docker pull farahmsaleh/celeba-classifier
 
-docker run -d -p 8080:8080 --name celeba farahmsaleh/celeba:latest
+docker run -p 8000:8000 farahmsaleh/celeba-classifier
 
 open link : http://127.0.0.1:8080/
