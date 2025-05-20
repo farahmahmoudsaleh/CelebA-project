@@ -6,23 +6,20 @@ This project implements a deep learning pipeline for **multi-label classificatio
 
 ## 📂 Project Structure (MVC Pattern)
 
-celeba_cnn_project/
-│
+celebA_cnn_project/
 ├── model/
-│   ├── model_loader.py           # load model from pckl file
-│   └── predictor.py              # send image to the model and get predictions
-│
+│   ├── model_loader.py     # Load model from .pkl file
+│   └── predictor.py        # Send image to the model and get predictions
 ├── view/
 │   ├── static/
-│   |   ├── style.css     
-│   └── templates/         
-│       ├── index.html 
+│   │   └── style.css
+│   └── templates/
+│       └── index.html
 ├── controller/
-│   ├── routes.py
-│
-├── utils/             
-│   ├── image_utils.py       # create transforms and load image
-├── requirements.txt         # Dependencies
+│   └── routes.py
+├── utils/
+│   └── image_utils.py      # Create transforms and load image
+├── requirements.txt        # Dependencies
 ├── README.md
 └── .gitignore
 
