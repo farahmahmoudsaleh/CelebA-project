@@ -1,0 +1,45 @@
+<!-- view/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CelebA Attribute Classifier</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Upload a Celebrity Image</h1>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*" required />
+      <button type="submit">Predict</button>
+    </form>
+
+    <div class="predictions">
+      <h2>Prediction Results:</h2>
+      <pre id="result">No prediction yet.</pre>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const form = new FormData(this);
+      const response = await fetch('/predict', {
+        method: 'POST',
+        body: form
+      });
+
+      const resultContainer = document.getElementById('result');
+
+      try {
+        const data = await response.json();
+        resultContainer.innerText = JSON.stringify(data, null, 2);
+      } catch (err) {
+        resultContainer.innerText = "Error parsing response.";
+        console.error("Prediction error:", err);
+      }
+    });
+  </script>
+</body>
+</html>
