@@ -5,7 +5,7 @@ This project implements a deep learning pipeline for **multi-label classificatio
 ---
 
 ## 📂 Project Structure (MVC Pattern)
-
+```
 celebA_cnn_project/
 ├── model/
 │   ├── model_loader.py     # Load model from .pkl file
@@ -23,6 +23,7 @@ celebA_cnn_project/
 ├── README.md
 └── .gitignore
 
+```
 
 ## 🧠 Model Overview
 
